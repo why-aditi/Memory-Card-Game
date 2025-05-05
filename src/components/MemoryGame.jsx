@@ -307,7 +307,22 @@ const MemoryGame = () => {
                 className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-6 rounded-2xl shadow-2xl border border-red-500/20"
               >
                 <div className="text-4xl font-bold mb-3">⏰ Time's Up! ⏰</div>
-                <div className="text-xl">Better luck next time!</div>
+                <div className="text-xl mb-6">Better luck next time!</div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    setMatchedPairs(0);
+                    setGameStarted(false);
+                    setCards([]);
+                    setFlippedCards([]);
+                    setAttempts(0);
+                    setTimeLeft(DIFFICULTY_LEVELS[difficulty].time);
+                  }}
+                  className="px-6 py-3 text-lg font-bold rounded-xl bg-white text-red-600 hover:bg-red-50 transition-colors duration-300 shadow-lg"
+                >
+                  Play Again
+                </motion.button>
               </motion.div>
             </motion.div>
           )}
